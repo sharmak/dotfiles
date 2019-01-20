@@ -28,7 +28,7 @@ Plugin 'tpope/vim-commentary' " comment/uncomment lines with gcc or gc in visual
 
 " colorschemes
 Plugin 'chriskempson/base16-vim'
-
+Plugin 'christoomey/vim-tmux-navigator'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -151,7 +151,7 @@ let g:ctrlp_custom_ignore = {
 
 let g:ctrlp_user_command = 'find %s -type f' 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_jump = 1
+let g:syntastic_auto_jump = 0
 
 " Git
 nnoremap <space>ga :Git add %:p<CR><CR>
@@ -169,3 +169,7 @@ nnoremap <space>gb :Git branch<Space>
 nnoremap <space>go :Git checkout<Space>
 nnoremap <space>gps :Dispatch! git push<CR>
 nnoremap <space>gpl :Dispatch! git pull<CR>dd
+
+nnoremap ,gl :YcmCompleter GoToDeclaration<CR>
+nnoremap ,gf :YcmCompleter GoToDefinition<CR>
+nnoremap ,gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
